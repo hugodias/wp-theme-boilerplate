@@ -2,7 +2,7 @@
 @import "override_bootstrap";
 
 // Load entire Bootstrap SCSS files
-@import "bower_components/bootstrap_sass/assets/stylesheets/bootstrap";
+@import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
 
 // Global CSS
 @import "layout/fonts";

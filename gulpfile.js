@@ -11,7 +11,7 @@ var sass        = require('gulp-sass');
 gulp.task('serve', ['sass'], function() {
 
     browserSync.init({
-        proxy: "http://wp-theme-boilerplate.dev"
+        proxy: "http://wptest.dev"
     });
 
     gulp.watch("sass/**/*.scss", ['sass']);

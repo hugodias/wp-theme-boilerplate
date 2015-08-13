@@ -1,0 +1,9 @@
+$extra-big: "only screen and (min-width: 1620px)";
+$big: "only screen and (min-width: 1440px) and (max-width: 1619px)";
+$r-tablet: "only screen and (max-width : 1024px)";
+$r-phone: "only screen and (max-width : 320px)";
+
+@media #{$extra-big} {}
+@media #{$big} {}
+@media #{$r-tablet} {}
+@media #{$r-phone} {}

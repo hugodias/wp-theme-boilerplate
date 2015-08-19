@@ -4,6 +4,12 @@
 // Load entire Bootstrap SCSS files
 @import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
 
+/**
+* Responsive utility using SASSMQ
+* @see https://github.com/sass-mq/sass-mq
+*/
+@import "utility/responsive";
+
 // Global CSS
 @import "layout/fonts";
 @import "layout/header";
@@ -13,5 +19,9 @@
 // Pages CSS
 @import "pages/home";
 
-// Responsive
-@import "responsive";
+.widget{
+  // Sample responsive usage
+  @include mq($from: mobile, $until: tablet){
+    background: red;
+  }
+}

@@ -1,13 +1,7 @@
-// Override Bootstrap variables in this file
 @import "override_bootstrap";
 
-// Load entire Bootstrap SCSS files
-@import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
+@import "../../public/components/bootstrap-sass/assets/stylesheets/bootstrap";
 
-/**
-* Responsive utility using SASSMQ
-* @see https://github.com/sass-mq/sass-mq
-*/
 @import "utility/responsive";
 
 // Global CSS

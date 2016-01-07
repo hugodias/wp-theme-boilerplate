@@ -12,7 +12,8 @@ var gutil = require('gulp-util');
 gulp.task('serve', ['sass'], function () {
 
     browserSync.init({
-        proxy: "http://wptest.dev"
+        proxy: "http://wptest.dev",
+        port: 5000
     });
 
     gulp.watch("assets/sass/**/*.scss", ['sass']);

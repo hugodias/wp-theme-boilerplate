@@ -25,7 +25,7 @@ gulp.task('serve', ['sass'], function () {
 
 gulp.task('sass', function () {
     return gulp.src("assets/sass/*.scss")
-        .pipe(sass().on('error', gutil.log))
+        .pipe(sass({errLogToConsole: true}))
         .pipe(gulp.dest("public/css"))
         .pipe(browserSync.stream());
 });

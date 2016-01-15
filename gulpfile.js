@@ -20,7 +20,8 @@ gulp.task('serve', ['sass'], function () {
     });
 
     gulp.watch("assets/sass/**/*.scss", ['sass']);
-    gulp.watch("assets/coffee/**/*.coffee", ['coffee','js-minify-concat']);
+    gulp.watch("assets/coffee/**/*.coffee", ['coffee']);
+    gulp.watch("assets/js/**/*.js", ['js-minify-concat']);
     gulp.watch("js/*.js").on('change', browserSync.reload);
     gulp.watch("*.php").on('change', browserSync.reload);
     gulp.watch("**/*.php").on('change', browserSync.reload);

@@ -9,18 +9,18 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
+<article id="post-<?php the_ID(); ?>" <?php post_class('blog-post'); ?>>
+	<header class="entry-header blog-post__header">
+		<?php the_title( sprintf( '<h2 class="entry-title blog-post__header__title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
 
 		<?php if ( 'post' == get_post_type() ) : ?>
-		<div class="entry-meta">
+		<div class="entry-meta blog-post__header__meta">
 			<?php wp_theme_boilerplate_posted_on(); ?>
 		</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
-	<div class="entry-content">
+	<div class="entry-content blog-post__content">
 		<?php
 			the_content( sprintf(
 				/* translators: %s: Name of current post. */
@@ -37,7 +37,7 @@
 		?>
 	</div><!-- .entry-content -->
 
-	<footer class="entry-footer">
+	<footer class="entry-footer blog-post__footer">
 		<?php wp_theme_boilerplate_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->

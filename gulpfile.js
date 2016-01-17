@@ -11,17 +11,22 @@ var gutil = require('gulp-util');
 var concat = require('gulp-concat');
 var rename = require('gulp-rename');
 var uglify = require('gulp-uglify');
+var imageop = require('gulp-image-optimization');
 
-gulp.task('serve', ['sass'], function () {
+gulp.task('serve', ['sass', 'coffee', 'images'], function () {
 
     browserSync.init({
-        proxy: "http://wptest.dev",
+        proxy: "http://192.168.56.10/",
         port: 5000
     });
 
     gulp.watch("assets/sass/**/*.scss", ['sass']);
     gulp.watch("assets/coffee/**/*.coffee", ['coffee']);
     gulp.watch("assets/js/**/*.js", ['js-minify-concat']);
+    gulp.watch(['assets/images/**/*.png',
+    'assets/images/**/*.jpg',
+    'assets/images/**/*.gif',
+    'assets/images/**/*.jpeg'], ['images']);
     gulp.watch("js/*.js").on('change', browserSync.reload);
     gulp.watch("*.php").on('change', browserSync.reload);
     gulp.watch("**/*.php").on('change', browserSync.reload);
@@ -47,6 +52,19 @@ gulp.task('js-minify-concat', function(){
         .pipe(rename('scripts.min.js'))
         .pipe(uglify())
         .pipe(gulp.dest('public/js'));
-})
+});
+
+gulp.task('images', function(cb) {
+    gulp.src([
+      'assets/images/**/*.png',
+      'assets/images/**/*.jpg',
+      'assets/images/**/*.gif',
+      'assets/images/**/*.jpeg'])
+      .pipe(imageop({
+        optimizationLevel: 5,
+        progressive: true,
+        interlaced: true
+    })).pipe(gulp.dest('public/images')).on('end', cb).on('error', cb);
+});
 
 gulp.task('default', ['serve']);

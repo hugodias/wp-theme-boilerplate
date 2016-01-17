@@ -1,3 +1,3 @@
-;(function(){
-  console.log('Happy Coding :P');
+$(function() {
+  return console.log('Write your app here.');
 });

@@ -13,9 +13,5 @@
 // Pages CSS
 @import "pages/home";
 
-.widget{
-  // Sample responsive usage
-  @include mq($from: mobile, $until: tablet){
-    background: red;
-  }
-}
+// Posts CSS
+@import "pages/posts";

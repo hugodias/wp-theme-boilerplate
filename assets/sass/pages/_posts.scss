@@ -1,0 +1,13 @@
+.blog-post{
+  &__header{
+    &__title{}
+    &__meta{}
+  }
+  &__content{
+    img{
+      max-width: 100%;
+      height: auto;
+    }
+  }
+  &__footer{}
+}

@@ -163,5 +163,12 @@ require get_template_directory() . '/inc/customizer.php';
  */
 require get_template_directory() . '/inc/jetpack.php';
 
+/**
+ * Woocommerce Suport
+ */
+require get_template_directory() . '/inc/woocommerce.php';
 
+/**
+ * Twitter Bootstrap Menu Walker
+ */
 require get_template_directory() . '/inc/wp_bootstrap_navwalker.php';
